@@ -20,6 +20,8 @@ p {
     text-align: center;
 }
 
+
+/* MOBILE */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -41,7 +43,7 @@ figcaption {
 }
 
 
-/* TABLET VIEW - 772px */
+/* TABLET: 772px trở lên */
 @media screen and (min-width: 772px) {
 
     .grid {
@@ -59,17 +61,19 @@ figcaption {
 }
 
 
-/* LARGE SCREEN VIEW - 992px */
+/* DESKTOP: 992px trở lên */
 @media screen and (min-width: 992px) {
 
     .grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
+    /* Da Nang chiếm 2 cột */
     figure:nth-child(3) {
         grid-column: 1 / span 2;
     }
 
+    /* Ninh Binh không còn chiếm 2 cột */
     figure:last-child {
         grid-column: auto;
     }
@@ -82,7 +86,6 @@ figcaption {
 
 /* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
