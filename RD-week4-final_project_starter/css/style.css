@@ -1,81 +1,79 @@
 body {
     background-color: #dedede;
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
+    font-family: Arial, sans-serif;
     font-size: 32px;
 }
 
 a {
     color: #000;
     text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 
 p {
     font-size: 25px;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* Mobile view */
+/* MOBILE VIEW */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 10px;
 }
 
 figure {
     margin: 0;
-    text-align: center;
 }
 
-figure img {
+img {
     width: 100%;
-    height: auto;
     display: block;
-    margin: auto;
 }
 
 figcaption {
-    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Tablet view - 772px */
+
+/* TABLET VIEW - 772px */
 @media screen and (min-width: 772px) {
 
     .grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
-    figure img {
+    img {
         border-radius: 50%;
     }
 
     figure:last-child {
-        grid-column: 1 / -1;
+        grid-column: 1 / span 2;
     }
 }
 
-/* Desktop view - 992px */
+
+/* LARGE SCREEN VIEW - 992px */
 @media screen and (min-width: 992px) {
 
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
+    figure:nth-child(3) {
+        grid-column: 1 / span 2;
     }
 
-    figure:nth-child(3n) {
-        grid-column: span 2;
-    }
-
-    figure img {
+    img {
         border-radius: 0;
     }
 }
 
-/* Reduced motion */
+
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
 
     html {
@@ -83,19 +81,21 @@ figcaption {
     }
 }
 
-/* Dark mode */
+
+/* DARK MODE */
 @media (prefers-color-scheme: dark) {
 
     body {
         background-color: #222;
-        color: #eee;
+        color: #fff;
     }
 
     a {
-        color: #eee;
+        color: #fff;
     }
 
-    figure img {
-        background-color: #000;
+    img {
+        background-color: #333;
+        border: 2px solid #000;
     }
 }
